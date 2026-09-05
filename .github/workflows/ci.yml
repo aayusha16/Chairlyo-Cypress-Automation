@@ -1,16 +1,21 @@
 name: Cypress Tests
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  schedule:
+    - cron: "15 11 * * *"
+
+  workflow_dispatch:
 
 jobs:
   cypress:
     runs-on: ubuntu-latest
+
+    env:
+      CYPRESS_BASE_URL: ${{ secrets.CYPRESS_BASE_URL }}
+      CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
+      CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+      CYPRESS_BRANCH_USERNAME: ${{ secrets.CYPRESS_BRANCH_USERNAME }}
+      CYPRESS_BRANCH_PASSWORD: ${{ secrets.CYPRESS_BRANCH_PASSWORD }}
 
     steps:
       - name: Checkout repository
