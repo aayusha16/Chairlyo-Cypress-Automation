@@ -16,7 +16,7 @@ describe("Chairlyo Billing & Payments Functionality", () => {
       .click();
   });
 
-  it("TC-001 - Verify Billing page loads successfully", () => {
+  it("Verify Billing page loads successfully", () => {
 
   cy.xpath(selector.billing_title)
     .should("be.visible")
@@ -24,33 +24,33 @@ describe("Chairlyo Billing & Payments Functionality", () => {
 
 });
 
-   it("TC-002 - Verify billing search with valid customer name", () => {
+   it("Verify billing search with valid customer name", () => {
 
   cy.xpath(selector.billing_search) .type("Teresa Lisbon");
   cy.contains("Lisbon Teresa").should("be.visible");
 
 });
     
-   it("TC-002 - Verify billing search with invalid customer name", () => {
+   it("Verify billing search with invalid customer name", () => {
    cy.xpath(selector.billing_search).type("Aayusha");
    cy.contains("Aayusha").should("be.visible");
 
 });
 
-it("TC-003 - Verify bill status filter for Paid bills", () => {
+it("Verify bill status filter for Paid bills", () => {
   cy.xpath(selector.bill_status_filter) .click();
   cy.xpath(selector.paid_filter) .click();
 
 });
 
-it("TC-004 - Verify bill status filter for Pending bills", () => {
+it("Verify bill status filter for Pending bills", () => {
 
   cy.xpath(selector.bill_status_filter) .click();
   cy.xpath(selector.pending_filter).click();
 });
 
 
-it(" Verify payment can be processed", () => {
+it("Verify payment can be processed", () => {
   cy.xpath(selector.make_payment) .click();
   cy.xpath(selector.process_button).click();
 
