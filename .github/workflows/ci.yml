@@ -1,8 +1,9 @@
+```yaml
 name: Cypress Tests
 
 on:
   schedule:
-    - cron: "15 11 * * *"
+    - cron: "15 8 * * *"
 
   workflow_dispatch:
 
@@ -25,3 +26,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
+```
