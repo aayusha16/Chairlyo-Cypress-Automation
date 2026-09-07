@@ -114,10 +114,10 @@ add_to_waiting_button: '//button[contains(normalize-space(), "Add to waiting")]'
   date_of_birth_dropdown: '//*[@id="date_of_birth"]',
   customer_address: '[name="address"]',
   save_changes_button: '//button[normalize-space()="Save Changes"]',
-  edit_customer_button: '//table/tbody/tr/td[7]/div/a',
+  edit_customer_button: '//table/tbody/tr/td[8]/div/a',
   edit_save_changes_button: '//button[normalize-space()="Save Changes"]',
 
-  delete_customer_button: '//*[@id="root"]/div/div[2]/main/div/div[2]/div/div[1]/div/table/tbody/tr[1]/td[7]/div/div',
+  delete_customer_button: '//table/tbody/tr/td[8]/div/div',
   delete_customer_input: '//input[@placeholder="Type Delete here"]',
   confirm_delete_customer: '//button[normalize-space()="Confirm Delete"]'
 

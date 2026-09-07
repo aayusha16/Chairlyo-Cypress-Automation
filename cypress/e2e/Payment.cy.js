@@ -27,7 +27,7 @@ describe("Chairlyo Billing & Payments Functionality", () => {
    it("Verify billing search with valid customer name", () => {
 
   cy.xpath(selector.billing_search) .type("Teresa Lisbon");
-  cy.contains("Lisbon Teresa").should("be.visible");
+  cy.contains("Teresa Lisbon").should("be.visible");
 
 });
     
@@ -51,8 +51,12 @@ it("Verify bill status filter for Pending bills", () => {
 
 
 it("Verify payment can be processed", () => {
+  cy.xpath(selector.bill_status_filter) .click();
+  cy.xpath(selector.pending_filter).click();
   cy.xpath(selector.make_payment) .click();
-  cy.xpath(selector.process_button).click();
+ cy.xpath(selector.process_button)
+  .should("be.visible")
+  .click();
 
 });
 

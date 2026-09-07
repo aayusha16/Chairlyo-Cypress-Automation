@@ -56,9 +56,7 @@ describe("Chairlyo Branch Add Waiting Functionality", () => {
     .should("be.visible")
     .click();
 
-  // Click Add Another Service
   
-  // Add to waiting
   cy.xpath(selector.add_to_waiting_button)
     .filter(":visible")
     .first()
